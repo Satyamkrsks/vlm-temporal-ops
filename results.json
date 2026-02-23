@@ -1,0 +1,22 @@
+{
+  "base_model": {
+    "OCA": 0.23,
+    "tIoU@0.5": 0.11,
+    "AA@1": 0.12,
+    "mean_tIoU": 0.19,
+    "n_clips": 30
+  },
+  "finetuned_model": {
+    "OCA": 0.71,
+    "tIoU@0.5": 0.54,
+    "AA@1": 0.48,
+    "mean_tIoU": 0.61,
+    "n_clips": 30
+  },
+  "deltas": {
+    "ΔOCA": 0.48,
+    "ΔtIoU@0.5": 0.43,
+    "ΔAA@1": 0.36
+  },
+  "_note": "PLACEHOLDER — replace after running: python evaluate.py --data_root /data/openpack --finetuned_checkpoint ./checkpoints/lora_final"
+}

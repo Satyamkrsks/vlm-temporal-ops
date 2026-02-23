@@ -1,0 +1,46 @@
+version: "3.9"
+
+services:
+  vlm-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: vlm-temporal-ops:latest
+    container_name: vlm_inference_api
+
+    ports:
+      - "8000:8000"
+
+    environment:
+      - MODEL_NAME=${MODEL_NAME:-Qwen/Qwen2-VL-2B-Instruct}
+      - LORA_CHECKPOINT=${LORA_CHECKPOINT:-/checkpoints/lora_final}
+      - USE_4BIT=${USE_4BIT:-true}
+      - HUGGING_FACE_HUB_TOKEN=${HF_TOKEN:-}
+      - TRANSFORMERS_CACHE=/root/.cache/huggingface/hub
+      - HF_HOME=/root/.cache/huggingface
+
+    volumes:
+      - hf_cache:/root/.cache/huggingface
+      - ./checkpoints:/checkpoints:ro
+      - ./training_data_samples:/data/samples:ro
+
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 180s
+
+    restart: unless-stopped
+
+volumes:
+  hf_cache:
+    driver: local

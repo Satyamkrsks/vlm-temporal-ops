@@ -1,0 +1,31 @@
+# Web server
+fastapi==0.111.0
+uvicorn[standard]==0.29.0
+python-multipart==0.0.9
+pydantic==2.7.1
+
+# ML core (torch installed separately for CUDA support)
+transformers==4.41.2
+accelerate==0.30.1
+bitsandbytes==0.43.1
+peft==0.11.1
+trl==0.8.6
+
+# Vision / video
+decord==0.6.0
+opencv-python-headless==4.9.0.80
+Pillow==10.3.0
+
+# Data
+datasets==2.19.1
+webdataset==0.2.86
+
+# Utilities
+numpy==1.26.4
+scipy==1.13.0
+tqdm==4.66.4
+huggingface-hub==0.23.2
+einops==0.8.0
+
+# OpenPack toolkit
+openpack-toolkit==1.1.0
