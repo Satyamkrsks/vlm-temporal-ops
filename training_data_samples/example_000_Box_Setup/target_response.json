@@ -1,0 +1,9 @@
+{
+  "dominant_operation": "Box Setup",
+  "temporal_segment": {
+    "start_frame": 0,
+    "end_frame": 25
+  },
+  "anticipated_next_operation": "Inner Packing",
+  "confidence": 1.0
+}

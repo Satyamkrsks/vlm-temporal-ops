@@ -1,0 +1,9 @@
+{
+  "dominant_operation": "Pack",
+  "temporal_segment": {
+    "start_frame": 12,
+    "end_frame": 124
+  },
+  "anticipated_next_operation": "Tape",
+  "confidence": 1.0
+}

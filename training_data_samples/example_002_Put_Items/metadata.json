@@ -1,0 +1,27 @@
+{
+  "clip_id": "U0101_S0500_op0400",
+  "subject": "U0101",
+  "session": "S0500",
+  "operation": "Put Items",
+  "next_operation": "Pack",
+  "sampled_frame_indices": [
+    0,
+    11,
+    12,
+    13,
+    14,
+    17,
+    18,
+    125
+  ],
+  "system_prompt": "You are analyzing a warehouse packaging operation video clip. Identify the current operation, its temporal boundaries, and predict the next operation based on procedural workflow knowledge.\n\nAvailable classes: Box Setup, Inner Packing, Tape, Put Items, Pack, Wrap, Label, Final Check, Idle, Unknown\n\nRespond ONLY with JSON:\n{\n  \"dominant_operation\": \"<name>\",\n  \"temporal_segment\": {\"start_frame\": <int>, \"end_frame\": <int>},\n  \"anticipated_next_operation\": \"<name>\",\n  \"confidence\": <float>\n}",
+  "target_json": {
+    "dominant_operation": "Put Items",
+    "temporal_segment": {
+      "start_frame": 12,
+      "end_frame": 119
+    },
+    "anticipated_next_operation": "Pack",
+    "confidence": 1.0
+  }
+}

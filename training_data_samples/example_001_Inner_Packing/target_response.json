@@ -1,0 +1,9 @@
+{
+  "dominant_operation": "Inner Packing",
+  "temporal_segment": {
+    "start_frame": 12,
+    "end_frame": 102
+  },
+  "anticipated_next_operation": "Put Items",
+  "confidence": 1.0
+}
